@@ -54,13 +54,13 @@ python train.py --cfg configs/cuhk_sysu.yaml --resume --ckpt /path/to/your/check
 Suppose the output directory is `$ROOT/exp_cuhk`. Test the trained model:
 
 ```
-python train.py --cfg $ROOT/exp_cuhk/config.yaml --eval --ckpt $ROOT/exp_cuhk/epoch_x.pth 
+python train.py --cfg $ROOT/exp_cuhk/config.yaml --eval --ckpt $ROOT/exp_cuhk/epoch_xx.pth 
 ```
 
 Test the upper bound of the person search performance by using GT boxes:
 
 ```
-python train.py --cfg $ROOT/exp_cuhk/config.yaml --eval --ckpt $ROOT/exp_cuhk/epoch_10.pth EVAL_USE_GT True
+python train.py --cfg $ROOT/exp_cuhk/config.yaml --eval --ckpt $ROOT/exp_cuhk/epoch_xx.pth EVAL_USE_GT True
 ```
 
 
