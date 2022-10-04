@@ -1,17 +1,17 @@
 
-This repository hosts the source code of our paper: [[ACCV 2022]PS-ARM: An End-to-End Attention-aware Relation Mixer Network for Person Search](https://arxiv.org/abs/2103.10148). 
+This repository hosts the source code of our paper: [[ACCV 2022]PS-ARM: An End-to-End Attention-aware Relation Mixer Network for Person Search](https://). 
 
 Performance profile:
 
 | Dataset   | mAP  | Top-1 | Model                                                        |
 | --------- | ---- | ----- | ------------------------------------------------------------ |
-| CUHK-SYSU | 94.8 | 95.7  | [model](https://drive.google.com/file/d/1wKhCHy7uTHx8zxNS62Y1236GNv5TzFzq/view?usp=sharing) |
-| PRW       | 47.6 | 87.6  | [model](https://drive.google.com/file/d/1I9OI6-sfVyop_aLDIWaYwd7Z4hD34hwZ/view?usp=sharing) |
+| CUHK-SYSU | 95.2 | 96.1  | [model](https://drive.google.com/file/d/1G1CmnLukVoWhUwuxIzl6LN7Ck1VoJ4TB/view?usp=sharing) |
+| PRW       | 52.6 | 88.1  | [model](https://drive.google.com/file/d/1LAILssRq_NctoWtPKjuRIK4PM2bx_j9N/view?usp=sharing) |
 
 
 ## Installation
 
-Create the environment using yml  `conda env create -f environment.yml` in the root directory of the project.
+Create the environment using yml  `conda env create -f armnet.yml` in the root directory of the project.
 
 
 ## Quick Start
@@ -25,7 +25,7 @@ $ROOT/data
 └── PRW
 ```
 2. Following the link in the above table, download our pretrained model to anywhere you like, e.g., `$ROOT/exp_cuhk`
-3. Run an inference demo by specifing the paths of checkpoint and corresponding configuration file. `python train.py --cfg $ROOT/exp_cuhk/config.yaml --ckpt $ROOT/exp_cuhk/epoch_19.pth` You can checkout the result in `demo_imgs` directory.
+3. Run an inference demo by specifing the paths of checkpoint and corresponding configuration file. `python train.py --cfg $ROOT/exp_cuhk/config.yaml --ckpt $ROOT/exp_cuhk/best_cuhk.ph` You can checkout the result in `demo_imgs` directory.
 
 ![demo.jpg](./demo_imgs/demo.jpg)
 
@@ -37,7 +37,7 @@ Pick one configuration file you like in `$ROOT/configs`, and run with it.
 python train.py --cfg configs/cuhk_sysu.yaml
 ```
 
-**Note**: At present, our script only supports single GPU training, but distributed training will be also supported in future. By default, the batch size and the learning rate during training are set to 5 and 0.003 respectively, which requires about 28GB of GPU memory. If your GPU cannot provide the required memory, try smaller batch size and learning rate (*performance may degrade*). Specifically, your setting should follow the [*Linear Scaling Rule*](https://arxiv.org/abs/1706.02677): When the minibatch size is multiplied by k, multiply the learning rate by k. For example:
+**Note**: At present, our script only supports single GPU training, but distributed training will be also supported in future. By default, the batch size and the learning rate during training are set to 3 and 0.003 respectively. If your GPU cannot provide the required memory, try smaller batch size and learning rate (*performance may degrade*). Specifically, your setting should follow the [*Linear Scaling Rule*](https://arxiv.org/abs/1706.02677): When the minibatch size is multiplied by k, multiply the learning rate by k. For example:
 
 ```
 python train.py --cfg configs/cuhk_sysu.yaml INPUT.BATCH_SIZE_TRAIN 3 SOLVER.BASE_LR 0.0003
@@ -54,7 +54,7 @@ python train.py --cfg configs/cuhk_sysu.yaml --resume --ckpt /path/to/your/check
 Suppose the output directory is `$ROOT/exp_cuhk`. Test the trained model:
 
 ```
-python train.py --cfg $ROOT/exp_cuhk/config.yaml --eval --ckpt $ROOT/exp_cuhk/epoch_10.pth EVAL_USE_CBGM True
+python train.py --cfg $ROOT/exp_cuhk/config.yaml --eval --ckpt $ROOT/exp_cuhk/epoch_x.pth 
 ```
 
 Test the upper bound of the person search performance by using GT boxes:
@@ -74,3 +74,12 @@ python train.py --cfg $ROOT/exp_cuhk/config.yaml --eval --ckpt $ROOT/exp_cuhk/ep
   year={2022}
 }
 ```
+
+## Contact
+Should you have any question, please create an issue on this repository or contact at mustansar.fiaz@mbzuai.ac.ae
+
+<hr />
+
+## References
+Our code is based on [SeqNet](https://github.com/serend1p1ty/SeqNet) repository. 
+We thank them for releasing their strong baseline code.
