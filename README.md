@@ -1,6 +1,12 @@
 
 This repository hosts the source code of our paper: [[ACCV 2022]PS-ARM: An End-to-End Attention-aware Relation Mixer Network for Person Search](https://). 
 
+## Installation
+
+Person search is a challenging problem with various real-world applications, that aims at joint person detection and re-identification of a query person from uncropped gallery images. Although, previous study focuses on rich feature information learning, it’s still hard to retrieve the query person due to the occurrence of appearance deformations and background distractors. In this paper, we propose a novel attention-aware relation mixer (ARM) module for person search, which exploits the global relation between different local regions within RoI of a person and make it robust against various appearance deformations and occlusion. The proposed ARM is composed of a relation mixer block and a spatio-channel attention layer. The relation mixer block introduces a spatially attended spatial mixing and a channel-wise attended channel mixing for effectively capturing discriminative relation features within an RoI. These discriminative relation features are further enriched by intro-
+ducing a spatio-channel attention where the foreground and background discriminability is empowered in a joint spatio-channel space. Our ARM module is generic and it does not rely on fine-grained supervisions or topological assumptions, hence being easily integrated into any Faster R-CNN based person search methods. Comprehensive experiments are performed on two challenging benchmark datasets: CUHK-SYSU and PRW. Our PS-ARM achieves state-of-the-art performance on both datasets. On the challenging PRW dataset, our PS-ARM achieves an absolute gain of 5% in the mAP score over SeqNet, while operating at a comparable speed. 
+
+
 Performance profile:
 
 | Dataset   | mAP  | Top-1 | Model                                                        |
