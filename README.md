@@ -75,7 +75,7 @@ python train.py --cfg $ROOT/exp_cuhk/config.yaml --eval --ckpt $ROOT/exp_cuhk/ep
 ```
 @inproceedings{fiaz2022psarm,
   title={PS-ARM: An End-to-End Attention-aware Relation Mixer Network for Person Search},
-  author={Fiaz, Mustansar and Cholakkal, Hisham and Narayan, Sanath and Anwar, Muhammad Rao and Khan, Fahad Shahbaz},
+  author={Fiaz, Mustansar and Cholakkal, Hisham and Narayan, Sanath and Anwar, Rao Muhammad and Khan, Fahad Shahbaz},
   booktitle={Proceedings of the ACCV Asian Conference on Computer Vision}, 
   year={2022}
 }
