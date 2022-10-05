@@ -30,7 +30,7 @@ _C.INPUT.NUM_WORKERS_TEST = 1
 #                          Solver                          #
 # -------------------------------------------------------- #
 _C.SOLVER = CN()
-_C.SOLVER.MAX_EPOCHS = 13
+_C.SOLVER.MAX_EPOCHS = 12
 
 # Learning rate settings
 _C.SOLVER.BASE_LR = 0.003
