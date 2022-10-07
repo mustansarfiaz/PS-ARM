@@ -88,4 +88,4 @@ Should you have any question, please create an issue on this repository or conta
 
 ## References
 Our code is based on [SeqNet](https://github.com/serend1p1ty/SeqNet) repository. 
-We thank them for releasing their strong baseline code.
+We thank them for releasing their baseline code.
