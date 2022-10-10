@@ -52,7 +52,7 @@ class ARMNet(nn.Module):
             featmap_names=["feat_res4"], output_size=14, sampling_ratio=2
         )
         box_predictor = BBoxRegressor(2048, num_classes=2, bn_neck=cfg.MODEL.ROI_HEAD.BN_NECK)
-        roi_heads = SeqRoIHeads(
+        roi_heads = ARMRoIHeads(
             # OIM
             num_pids=cfg.MODEL.LOSS.LUT_SIZE,
             num_cq_size=cfg.MODEL.LOSS.CQ_SIZE,
@@ -155,7 +155,7 @@ class ARMNet(nn.Module):
         return losses
 
 
-class SeqRoIHeads(RoIHeads):
+class ARMRoIHeads(RoIHeads):
     def __init__(
         self,
         num_pids,
@@ -167,7 +167,7 @@ class SeqRoIHeads(RoIHeads):
         *args,
         **kwargs
     ):
-        super(SeqRoIHeads, self).__init__(*args, **kwargs)
+        super(ARMRoIHeads, self).__init__(*args, **kwargs)
         self.embedding_head = NormAwareEmbedding()
         self.reid_loss = OIMLoss(256, num_pids, num_cq_size, oim_momentum, oim_scalar)
         self.faster_rcnn_predictor = faster_rcnn_predictor
