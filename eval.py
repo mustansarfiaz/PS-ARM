@@ -9,7 +9,7 @@ import torch.utils.data
 from datasets import build_test_loader, build_train_loader
 from defaults import get_default_cfg
 from engine import evaluate_performance, train_one_epoch
-from models.seqnet import SeqNet
+from models.arm_net import ARMNet
 from utils.utils import mkdir, resume_from_ckpt, save_on_master, set_random_seed
 
 
@@ -25,7 +25,7 @@ def main(args):
         set_random_seed(cfg.SEED)
 
     print("Creating model")
-    model = SeqNet(cfg)
+    model = ARMNet(cfg)
     model.to(device)
 
     print("Loading data")
@@ -46,7 +46,7 @@ def main(args):
 
         resume_from_ckpt(args.ckpt, model)
         evaluate_performance(
-            model,epoch,
+            model,
             gallery_loader,
             query_loader,
             device,
