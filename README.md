@@ -1,5 +1,5 @@
 
-This repository hosts the source code of our paper: [[ACCV 2022] PS-ARM: An End-to-End Attention-aware Relation Mixer Network for Person Search](https://). 
+This repository hosts the source code of our paper: [[ACCV 2022] PS-ARM: An End-to-End Attention-aware Relation Mixer Network for Person Search](https://arxiv.org/abs/2210.03433). 
 
 ## Abstract
 
