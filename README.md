@@ -89,3 +89,4 @@ Should you have any question, please create an issue on this repository or conta
 ## References
 Our code is based on [SeqNet](https://github.com/serend1p1ty/SeqNet) repository. 
 We thank them for releasing their baseline code.
+* **PS-ARM**: "PS-ARM: An End-to-End Attention-aware Relation Mixer Network for Person Search", ACCV, 2022 (*MBZUAI*). [[Paper](https://arxiv.org/abs/2210.03433)][[PyTorch](https://github.com/mustansarfiaz/PS-ARM)]
