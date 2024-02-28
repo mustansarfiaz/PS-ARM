@@ -25,6 +25,7 @@ Create the environment using yml  `conda env create -f armnet.yml` in the root d
 Let's say `$ROOT` is the root directory.
 
 1. Download [CUHK-SYSU](https://drive.google.com/open?id=1z3LsFrJTUeEX3-XjSEJMOBrslxD2T5af) and [PRW](https://goo.gl/2SNesA) datasets, and unzip them to `$ROOT/data`
+2. Or can be found at [PS Datasets](https://drive.google.com/drive/folders/1jQUvxxOq_O-e09zVSFLAot673JrMLGG6?usp=sharing)
 ```
 $ROOT/data
 ├── CUHK-SYSU
